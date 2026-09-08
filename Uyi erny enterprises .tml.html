@@ -1,0 +1,465 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+  <title>Uyi_Erny Enterprises - Technology Training</title>
+
+  <style>
+    * {
+      box-sizing: border-box;
+      margin: 0;
+      padding: 0;
+    }
+
+    body {
+      font-family: Arial, sans-serif;
+      background: #800080;
+      color: white;
+      line-height: 1.6;
+    }
+
+    header {
+      background: #FFC0CB;
+      padding: 25px 20px;
+      text-align: center;
+    }
+
+    header h1 {
+      color: #00c853;
+      font-size: 40px;
+    }
+
+    header p {
+      font-size: 18px;
+      margin-top: 5px;
+    }
+
+    .hero {
+      text-align: center;
+      padding: 60px 20px;
+      background: linear-gradient(135deg, #800080, #0b456d);
+    }
+
+    .hero h2 {
+      font-size: 36px;
+      margin-bottom: 15px;
+    }
+
+    .hero p {
+      font-size: 18px;
+      max-width: 700px;
+      margin: auto;
+    }
+
+    .register-btn {
+      margin-top: 25px;
+      background: #00c853;
+      color: white;
+      border: none;
+      padding: 15px 30px;
+      border-radius: 8px;
+      font-size: 18px;
+      font-weight: bold;
+      cursor: pointer;
+    }
+
+    .register-btn:hover {
+      background: #00a844;
+    }
+
+    .section-title {
+      text-align: center;
+      margin: 40px 0 25px;
+      font-size: 30px;
+      color: #00c853;
+    }
+
+    .courses {
+      display: grid;
+      grid-template-columns: repeat(auto-fit, minmax(220px, 1fr));
+      gap: 20px;
+      padding: 20px;
+      max-width: 1000px;
+      margin: auto;
+    }
+
+    .course {
+      background: #0d2d45;
+      padding: 25px;
+      border-radius: 12px;
+      text-align: center;
+      border: 1px solid #174d70;
+    }
+
+    .course h3 {
+      color: #00c853;
+      margin-bottom: 10px;
+    }
+
+    .contact {
+      text-align: center;
+      padding: 40px 20px;
+      background: #FFC0CB;
+      margin-top: 40px;
+    }
+
+    .contact h2 {
+      color: #00c853;
+      margin-bottom: 15px;
+    }
+
+    /* MODAL */
+    .modal {
+      display: none;
+      position: fixed;
+      z-index: 9999;
+      left: 0;
+      top: 0;
+      width: 100%;
+      height: 100%;
+      background: rgba(0, 0, 0, 0.75);
+      justify-content: center;
+      align-items: center;
+      padding: 20px;
+    }
+
+    .modal-content {
+      background: #ffffff;
+      color: #222;
+      width: 100%;
+      max-width: 500px;
+      padding: 30px;
+      border-radius: 15px;
+      position: relative;
+      max-height: 90vh;
+      overflow-y: auto;
+    }
+
+    .modal-content h2 {
+      color: #062b49;
+      text-align: center;
+      margin-bottom: 10px;
+    }
+
+    .modal-content p {
+      text-align: center;
+      margin-bottom: 20px;
+    }
+
+    .close-btn {
+      position: absolute;
+      right: 18px;
+      top: 10px;
+      font-size: 32px;
+      cursor: pointer;
+      color: #555;
+    }
+
+    .form-group {
+      margin-bottom: 15px;
+    }
+
+    .form-group label {
+      display: block;
+      margin-bottom: 6px;
+      font-weight: bold;
+    }
+
+    .form-group input,
+    .form-group select {
+      width: 100%;
+      padding: 13px;
+      border: 1px solid #ccc;
+      border-radius: 7px;
+      font-size: 16px;
+    }
+
+    .submit-btn {
+      width: 100%;
+      padding: 14px;
+      background: #00c853;
+      color: white;
+      border: none;
+      border-radius: 7px;
+      font-size: 17px;
+      font-weight: bold;
+      cursor: pointer;
+    }
+
+    .submit-btn:hover {
+      background: #00a844;
+    }
+
+    footer {
+      text-align: center;
+      padding: 20px;
+      background: #041522;
+    }
+  </style>
+</head>
+
+<body>
+
+  <!-- HEADER -->
+  <header>
+    <h1>Uyi_Erny Enterprises.</h1>
+    <p>Technology Training & Digital Skills</p>
+  </header>
+
+
+  <!-- HERO -->
+  <section class="hero">
+    <h2>Build Your Future With Technology</h2>
+
+    <p>
+      Learn practical technology and digital skills with Uyi_erny Enterprises.
+      Get trained in networking, cybersecurity and other ICT skills.
+    </p>
+
+    <button class="register-btn" onclick="openRegistration()">
+      Register Now
+    </button>
+  </section>
+
+
+  <!-- COURSES -->
+  <h2 class="section-title">Our Training Programs</h2>
+
+  <section class="courses">
+
+    <div class="course">
+      <h3>CCNA</h3>
+      <p>
+        Learn networking fundamentals, routing, switching
+        and network security.
+      </p>
+    </div>
+
+    <div class="course">
+      <h3>MikroTik</h3>
+      <p>
+        Learn MikroTik configuration, routing,
+        wireless networking and administration.
+      </p>
+    </div>
+
+    <div class="course">
+      <h3>Cyber Security</h3>
+      <p>
+        Learn the fundamentals of cybersecurity,
+        threats, protection and network security.
+      </p>
+    </div>
+
+    <div class="course">
+      <h3>Networking</h3>
+      <p>
+        Develop practical skills in computer networking
+        and network administration.
+      </p>
+    </div>
+
+  </section>
+
+
+  <!-- CONTACT -->
+  <section class="contact">
+
+    <h2>Contact Uyi_Erny Enterprises</h2>
+
+    <p>
+      📍 Venue: 10 ekewan road opposite school gate
+    </p>
+
+    <p>
+      📱 WhatsApp: +234 8088152413
+    </p>
+
+  </section>
+
+
+  <!-- REGISTRATION MODAL -->
+  <div id="registrationModal" class="modal">
+
+    <div class="modal-content">
+
+      <span class="close-btn" onclick="closeRegistration()">
+        &times;
+      </span>
+
+      <h2>Uyi_Erny Enterprises Registration</h2>
+
+      <p>
+        Fill in your details below to register for our
+        technology training programs.
+      </p>
+
+      <form onsubmit="submitRegistration(event)">
+
+        <!-- NAME -->
+        <div class="form-group">
+          <label for="name">Full Name</label>
+
+          <input
+            type="text"
+            id="name"
+            placeholder="Enter your full name"
+            required
+          >
+        </div>
+
+
+        <!-- PHONE -->
+        <div class="form-group">
+          <label for="phone">Phone Number</label>
+
+          <input
+            type="tel"
+            id="phone"
+            placeholder="Enter your phone number"
+            required
+          >
+        </div>
+
+
+        <!-- EMAIL -->
+        <div class="form-group">
+          <label for="email">Email Address</label>
+
+          <input
+            type="email"
+            id="email"
+            placeholder="Enter your email"
+            required
+          >
+        </div>
+
+
+        <!-- COURSE -->
+        <div class="form-group">
+          <label for="course">Training Program</label>
+
+          <select id="course" required>
+
+            <option value="">
+              Select Training Program
+            </option>
+
+            <option value="CCNA">
+              CCNA
+            </option>
+
+            <option value="MikroTik">
+              MikroTik
+            </option>
+
+            <option value="Cyber Security">
+              Cyber Security
+            </option>
+
+            <option value="Networking">
+              Networking
+            </option>
+
+          </select>
+        </div>
+
+
+        <!-- SUBMIT -->
+        <button type="submit" class="submit-btn">
+          Register via WhatsApp
+        </button>
+
+      </form>
+
+    </div>
+
+  </div>
+
+
+  <!-- FOOTER -->
+  <footer>
+    <p>
+      © 2026 Uyi_Erny Enterprises. All Rights Reserved.
+    </p>
+  </footer>
+
+
+  <!-- JAVASCRIPT -->
+  <script>
+
+    function openRegistration() {
+      document.getElementById("registrationModal").style.display = "flex";
+    }
+
+
+    function closeRegistration() {
+      document.getElementById("registrationModal").style.display = "none";
+    }
+
+
+    function submitRegistration(event) {
+
+      event.preventDefault();
+
+      // VLSTech WhatsApp number
+      const whatsappNumber = "2348088152413"; // Replace with your WhatsApp number
+
+      // Get form information
+      const name = document.getElementById("name").value.trim();
+      const phone = document.getElementById("phone").value.trim();
+      const email = document.getElementById("email").value.trim();
+      const course = document.getElementById("course").value;
+
+
+      // Create WhatsApp message
+      const message =
+`Hello Uyi_Enterprises,
+
+I would like to register for your technology training.
+
+Full Name: ${name}
+
+Phone Number: ${phone}
+
+Email: ${email}
+
+Training Program: ${course}
+
+Venue: 10 ekewan road opposite school gate.
+
+Thank you.`;
+
+
+      // Create WhatsApp link
+      const whatsappURL =
+        "https://wa.me/" +
+        whatsappNumber +
+        "?text=" +
+        encodeURIComponent(message);
+
+
+      // Open WhatsApp
+      window.open(whatsappURL, "_blank");
+
+    }
+0
+
+    // Close modal when clicking outside the form
+    window.onclick = function(event) {
+
+      const modal =
+        document.getElementById("registrationModal");
+
+      if (event.target === modal) {
+        closeRegistration();
+      }
+
+    };
+
+  </script>
+
+</body>
+</html>
